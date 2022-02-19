@@ -28,20 +28,22 @@ export default function App() {
         clearInterval(temporizador)
       }
     }
-    console.log(baixoPassaro)
   }, [baixoPassaro])
+  console.log(baixoPassaro)
   //Primeiro obstáculo
   useEffect(() => {
     if (obstaculosEsquerda > 0){
       temporizadorObstaculosEsquerda = setInterval(() => {
         setObstaculosEsquerda(obstaculosEsquerda => obstaculosEsquerda - 5)
-      }, 30)
+      },30)
     }
-    return () => {
-      clearInterval(temporizadorObstaculosEsquerda)
-    }
+  return () => {
+    clearInterval(temporizadorObstaculosEsquerda)
+  }
   
   }, [obstaculosEsquerda])
+
+
   return (
     <View style={styles.container}>
       <JettBird
