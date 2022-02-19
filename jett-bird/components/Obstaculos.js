@@ -1,6 +1,6 @@
 import { Image, View } from 'react-native';
 
-const Obstaculos = (obstaculosEsquerda, larguraObstaculo, comprimentoObstaculo, gap) => {
+const Obstaculos = ({obstaculosEsquerda, larguraObstaculo, comprimentoObstaculo, gap}) => {
     
     return (
     <>
@@ -10,7 +10,8 @@ const Obstaculos = (obstaculosEsquerda, larguraObstaculo, comprimentoObstaculo, 
             width: larguraObstaculo,
             height: comprimentoObstaculo,
             left: obstaculosEsquerda,
-            bottom: 0 + comprimentoObstaculo + gap,
+            top: 0,
+            // bottom: 0 + comprimentoObstaculo + gap,
         }}/>
         <View style={{
             position: 'absolute',

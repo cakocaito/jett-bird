@@ -36,10 +36,10 @@ export default function App() {
       temporizadorObstaculosEsquerda = setInterval(() => {
         setObstaculosEsquerda(obstaculosEsquerda => obstaculosEsquerda - 5)
       },30)
+      return () => {
+        clearInterval(temporizadorObstaculosEsquerda)
+      }
     }
-  return () => {
-    clearInterval(temporizadorObstaculosEsquerda)
-  }
   
   }, [obstaculosEsquerda])
 
@@ -49,7 +49,7 @@ export default function App() {
       <JettBird
         baixoPassaro = {baixoPassaro}
         esquerdaPassaro = {esquerdaPassaro}
-      />
+      /> 
       <Obstaculos 
         obstaculosEsquerda = {obstaculosEsquerda}
         larguraObstaculo = {larguraObstaculo}
